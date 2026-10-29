@@ -23,6 +23,92 @@
 @keyframes pulse-dot{50%{opacity:.4}}
 @media(max-width:760px){.ps-feature{grid-template-columns:1fr}.ps-copy{padding:29px 26px 10px}.ps-head{font-size:clamp(30px,7.5vw,43px)}.ps-art{padding:12px 30px 32px}.ps-art img,.ps-art .ps-fallback{width:min(76%,310px);max-height:310px}.ps-description{margin:15px 0 20px}}
 @media(prefers-reduced-motion:reduce){.ps-art img,.ps-pill:before{animation:none}}
+
+/* Mobile-first layout refinements: phones, small tablets and safe areas */
+html{min-width:320px;-webkit-text-size-adjust:100%}
+body{min-width:320px}
+a,button{-webkit-tap-highlight-color:transparent}
+.platform,.release,.socials a,.cta,.ghost,.ps-button{touch-action:manipulation}
+.p-copy,.platform,.release,.hero-copy,.ps-copy,.ps-feature{min-width:0}
+@media(max-width:900px){
+ .hero{gap:0}
+ .hero-copy{padding-top:40px;padding-bottom:12px}
+ .visual{max-width:620px;width:100%;margin-inline:auto}
+ .hero h1{font-size:clamp(50px,10.5vw,90px)}
+ .ps-feature{margin-top:20px}
+}
+@media(max-width:600px){
+ .top{padding:19px 18px 14px;gap:10px}
+ .container{padding-left:18px;padding-right:18px}
+ .smallbrand{font-size:clamp(12px,3.5vw,15px);letter-spacing:-.7px;white-space:nowrap}
+ .topright{font-size:9px;letter-spacing:1px;text-align:right;gap:7px}
+ .hero{display:flex;flex-direction:column;align-items:stretch;min-height:0;padding-top:0}
+ .hero-copy{padding-top:30px;padding-bottom:0;width:100%}
+ .eyebrow{font-size:9px;letter-spacing:2px;gap:9px}
+ .eyebrow:before{width:22px}
+ .hero h1{font-size:clamp(45px,13.2vw,78px);line-height:1.04;letter-spacing:-.085em;margin:19px 0 13px;overflow-wrap:normal}
+ .subtitle{font-size:13px;line-height:1.7;max-width:33ch}
+ .actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:20px}
+ .cta,.ghost{min-height:49px;padding:11px 10px;font-size:10px;letter-spacing:0;text-align:center;white-space:normal;border-radius:11px}
+ .visual{height:clamp(290px,84vw,430px);margin-top:-4px;margin-bottom:0;margin-left:auto;margin-right:auto;max-width:470px;overflow:hidden}
+ .artist-portrait{inset:0 -5% -2% -5%;animation:float 7s ease-in-out infinite}
+ .artist-portrait img{object-position:center bottom}
+ .ring{width:min(100vw,440px);height:min(100vw,440px);left:50%;top:50%}
+ .name-ghost{font-size:clamp(46px,12vw,75px);top:50%;letter-spacing:-.1em}
+ .label{right:0;bottom:13%;font-size:8px;letter-spacing:2px}
+ .ps-feature{margin:7px auto 23px;border-radius:20px;grid-template-columns:1fr}
+ .ps-copy{padding:27px 22px 8px}
+ .ps-pill{font-size:9px;letter-spacing:1.2px;padding:8px 12px}
+ .ps-label{font-size:10px;letter-spacing:1.2px}
+ .ps-head{font-size:clamp(28px,8.2vw,45px);line-height:1.12;margin:17px 0 9px}
+ .ps-date{font-size:clamp(20px,6.1vw,29px);margin:12px 0}
+ .ps-description{font-size:12px;line-height:1.65;margin:15px 0 18px}
+ .ps-actions,.ps-button{width:100%}
+ .ps-button{justify-content:center;min-height:52px;padding:14px 16px;font-size:12px;border-radius:12px}
+ .ps-countdown{font-size:10px}
+ .ps-art{padding:15px 22px 28px}
+ .ps-art img,.ps-art .ps-fallback{width:min(80%,310px);max-height:none}
+ .section{padding:47px 0}
+ .section-head{gap:10px;margin-bottom:21px}
+ .kicker{font-size:9px;letter-spacing:2.5px}
+ h2{font-size:clamp(27px,8vw,40px);line-height:1.12;overflow-wrap:anywhere}
+ .meta{font-size:11px}
+ .platforms,.releases{grid-template-columns:minmax(0,1fr);gap:10px}
+ .platform{min-height:75px;padding:13px 14px;gap:13px;border-radius:15px}
+ .p-icon{height:43px;width:43px;min-width:43px;font-size:16px;border-radius:12px}
+ .p-copy strong{font-size:13px}
+ .p-copy small{font-size:10px}
+ .arrow{font-size:19px}
+ .release{min-height:164px;padding:19px;border-radius:16px}
+ .release strong{font-size:clamp(15px,5.3vw,23px);line-height:1.3;overflow-wrap:anywhere;display:inline-block;max-width:calc(100% - 30px)}
+ .disc{height:100px;width:100px;right:-15px;top:30px;opacity:.7}
+ .socials{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+ .socials a{text-align:center;display:flex;align-items:center;justify-content:center;min-height:48px;padding:12px;font-size:11px;border-radius:12px}
+ .closing{padding:37px 0 22px}
+ .closing strong{font-size:clamp(30px,9.2vw,54px)}
+ .closing p{font-size:8px;letter-spacing:1.6px}
+ footer{padding:18px 0 calc(28px + env(safe-area-inset-bottom));gap:15px;flex-wrap:wrap;font-size:10px}
+}
+@media(max-width:365px){
+ .container{padding-left:14px;padding-right:14px}
+ .top{padding-left:14px;padding-right:14px}
+ .hero h1{font-size:clamp(43px,12.9vw,49px)}
+ .actions{grid-template-columns:1fr 1fr}
+ .cta,.ghost{font-size:9px}
+ .ps-copy{padding-left:18px;padding-right:18px}
+ .ps-head{font-size:27px}
+ .socials{grid-template-columns:1fr}
+}
+@media(min-width:601px) and (max-width:900px){
+ .container{padding-inline:26px}
+ .hero-copy{padding-top:55px}
+ .visual{height:520px}
+ .ps-feature{grid-template-columns:minmax(0,1fr) minmax(220px,.8fr)}
+ .ps-copy{padding:29px}
+ .ps-art{padding:18px}
+ .ps-head{font-size:clamp(27px,4.4vw,39px)}
+ .ps-date{font-size:23px}
+}
 </style></head><body><div class="ambient"></div><header class="top"><div class="smallbrand">WILLTOX <span>WT?</span></div><div class="topright"><span class="live"></span> HUSTLE LABEL MUSIC</div></header><main><section class="hero container"><div class="hero-copy"><div class="eyebrow">Independent rap artist</div><h1>WILLTOX <span>WT?</span></h1><p class="subtitle">Без лишних слов. Только музыка, истории и то, что остаётся после прослушивания.</p><div class="actions"><a class="cta" href="#listen">СЛУШАТЬ МУЗЫКУ ↗</a><a class="ghost" href="#tracks">РЕЛИЗЫ ↓</a></div></div><div class="visual"><div class="ring"></div><div class="artist-portrait"><img alt="WILLTOX WT? — портрет артиста" src="willtox-cutout.png" onerror="this.alt='Портрет временно недоступен'"></div><div class="name-ghost">WILLTOX</div><div class="label">NO FAKE STORIES</div></div></section><section class="container" id="presave"><div class="ps-feature"><div class="ps-copy"><div class="ps-pill">NEW RELEASE / PRE-SAVE</div><div class="ps-label" style="margin-top:18px">WILLTOX WT? · СКОРО ВЫХОДИТ</div><h2 class="ps-head">ЧЕРНЫЙ<br>КРОССОВЕР</h2><div class="ps-date">20 НОЯБРЯ 2026</div><p class="ps-description">Новый трек уже доступен для пресейва. Сохрани заранее, чтобы не пропустить релиз.</p><div class="ps-actions"><a class="ps-button" href="https://band.link/HQDJY" target="_blank" rel="noopener noreferrer">СДЕЛАТЬ ПРЕСЕЙВ <span>↗</span></a></div><div id="ps-countdown" class="ps-countdown" aria-live="off"></div></div><div class="ps-art"><img src="chernyi-krossover-cover.jpg" alt="Обложка сингла WILLTOX WT? — Черный кроссовер" loading="eager" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="ps-fallback">ЧЕРНЫЙ<br>КРОССОВЕР</div></div></div></section><div class="divider"></div>
 <section class="section container" id="listen"<div class="section-head"><div><div class="kicker">01 / Choose your sound</div><h2>ГДЕ СЛУШАТЬ</h2></div><div class="meta">Музыкальные площадки ↗</div></div><div class="platforms">
 <a class="platform" data-edit-link="link_01" href="https://music.yandex.ru/artist/21542297" style="--glow:#ec9700" target="_blank" rel="noopener"><div class="p-icon">Я</div><div class="p-copy"><strong>Яндекс Музыка</strong><small>Карточка артиста</small></div><span class="arrow">↗</span></a>
